@@ -1,12 +1,11 @@
 <nav class="col-md-3">
-    <h3 class="home-link"><a href="{{ index .Site.Params "rootlink" | default .Site.BaseURL }}">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).root }}</a></h3>    
     {{ range .Site.Menus.main.ByWeight }}
         {{ if .HasChildren }}
             <div id="menu-items-{{.Name}}" class="open">
                 <h3 data-open="menu-items-{{.Name}}">{{ .Name }}</h3>
                 <ul class="menu-items-{{.Name}}">
                 {{ range .Children }}
-                    <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                 {{ end }}
                 </ul>
             </div>
