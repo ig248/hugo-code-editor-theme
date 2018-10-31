@@ -1070,7 +1070,6 @@ a {
     color: #1a645f;
     text-decoration: underline; }
   a:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
 
@@ -2089,7 +2088,7 @@ table th[class*="col-"] {
   .hidden-print {
     display: none !important; } }
 
-.no-padding-left-and-right, body > .container-fluid, .menu nav {
+.no-padding-left-and-right, body > .container-fluid {
   padding-left: 0px;
   padding-right: 0px; }
 
@@ -2155,6 +2154,8 @@ a {
   padding-left: 0px; }
   @media (min-width: 992px) {
     .menu nav {
+      padding-left: 0px;
+      padding-right: 0px;
       position: fixed;
       height: 100%;
       overflow-y: auto;
@@ -2178,6 +2179,8 @@ a {
       list-style: none;
       padding: 4px 30px 4px 40px;
       margin-right: -15px; }
+      .menu nav ul li.menu-top-level {
+        padding-left: 15px; }
       .menu nav ul li:before {
         margin-right: 8px; }
       .menu nav ul li:hover {

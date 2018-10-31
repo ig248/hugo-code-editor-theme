@@ -90,6 +90,9 @@ a {
         list-style: none;
         padding: 4px 30px 4px 40px;
         margin-right: -15px;
+        &.menu-top-level {
+          padding-left: 15px;
+        }
         &:before {
           @extend .glyphicon;
           @extend .glyphicon-file;
