@@ -2175,6 +2175,9 @@ a {
   .menu nav ul {
     padding-left: 0px;
     margin: 0px; }
+    .menu nav ul a, .menu nav ul a:hover {
+      color: #839496;
+      text-decoration: none; }
     .menu nav ul li {
       list-style: none;
       padding: 4px 30px 4px 40px;
