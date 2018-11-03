@@ -235,7 +235,7 @@ th {
   src: url("../fonts/glyphicons-halflings-regular.eot");
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
-.glyphicon, .menu nav h3:not(.home-link):before, .menu nav ul li:before, ul.tags li:before {
+.glyphicon, .menu nav h3:not(.home-link):before, .menu nav ul li a:before, .menu nav ul li a:hover:before, ul.post-tags li:before {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -328,7 +328,7 @@ th {
 .glyphicon-home:before {
   content: "\e021"; }
 
-.glyphicon-file:before, .menu nav ul li:before {
+.glyphicon-file:before, .menu nav ul li a:before, .menu nav ul li a:hover:before {
   content: "\e022"; }
 
 .glyphicon-time:before {
@@ -385,13 +385,13 @@ th {
 .glyphicon-barcode:before {
   content: "\e040"; }
 
-.glyphicon-tag:before, .menu nav ul.tags li:before, ul.tags li:before {
+.glyphicon-tag:before, .menu nav ul.tags li a:before, ul.post-tags li:before {
   content: "\e041"; }
 
 .glyphicon-tags:before {
   content: "\e042"; }
 
-.glyphicon-book:before, .menu nav ul.categories li:before {
+.glyphicon-book:before, .menu nav ul.categories li a:before {
   content: "\e043"; }
 
 .glyphicon-bookmark:before {
@@ -2184,29 +2184,29 @@ a {
       margin-right: -15px; }
       .menu nav ul li.menu-top-level {
         padding-left: 15px; }
-      .menu nav ul li:before {
-        margin-right: 8px; }
       .menu nav ul li:hover {
         background-color: #003b4a; }
       .menu nav ul li a, .menu nav ul li a:hover {
         color: #839496;
         text-decoration: none; }
+        .menu nav ul li a:before, .menu nav ul li a:hover:before {
+          margin-right: 8px; }
   @media (max-width: 991px) {
     .menu nav h3 {
       padding: 10px 0px 10px 15px; }
     .menu nav ul li {
       padding: 10px 30px 10px 40px; } }
 
-ul.tags {
+ul.post-tags {
   padding-left: 0px;
   padding-right: 5px;
   margin: 0px; }
-  ul.tags li {
+  ul.post-tags li {
     list-style: none;
     float: left;
     padding: 4px 10px 4px 0px;
     margin-right: 0px; }
-    ul.tags li:before {
+    ul.post-tags li:before {
       margin-right: 8px; }
 
 .video-wrapper {

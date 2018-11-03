@@ -5,17 +5,17 @@
                 <h3 data-open="menu-items-{{.Name}}">{{ .Name }}</h3>
                 <ul class="menu-items-{{.Name}}">
                 {{ range .Children }}
-                    <a href="{{ .URL }}">
-                        <li>{{ .Name }}</li>
-                    </a>
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
                 {{ end }}
                 </ul>   
             </div>
         {{ else }}
             <ul>
-                <a title="{{ .Name }}" href="{{ .URL }}">
-                    <li class="menu-top-level">{{ .Name }}</li>
-                </a>
+                <li class="menu-top-level">
+                    <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
             </ul>
         {{ end }}
     {{ end }}
@@ -24,7 +24,7 @@
         <h3 data-open="last-posts">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).mostrecentposts }}</h3>
         <ul>
             {{ range first 5 .Site.RegularPages }}
-            <a href="{{ .Permalink }}"><li>{{ .Title }}</li></a>
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}
         </ul>
     </div>
@@ -34,7 +34,7 @@
         <h3 data-open="tags">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).tags }}</h3>
         <ul class="tags">
             {{ range .ByCount }}
-            <a href="/tags/{{ .Name | urlize }}"><li>{{ .Name }} ({{.Count}})</li></a>
+            <li><a href="/tags/{{ .Name | urlize }}">{{ .Name }} ({{.Count}})</a></li>
             {{ end }}
         </ul>
     </div>
@@ -45,7 +45,7 @@
         <h3 data-open="categories">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).categories }}</h3>
         <ul class="categories">
             {{ range $name, $taxonomy := . }}
-            <a href="/categories/{{ $name | urlize }}"><li>{{ $name }}</li></a>
+            <li><a href="/categories/{{ $name | urlize }}">{{ $name }}</a></li>
             {{ end }}
         </ul>
     </div>

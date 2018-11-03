@@ -1,35 +1,50 @@
 (function() {
-    var elements = document.querySelectorAll('[data-open]');
-    for (var i=0; i<elements.length; i++) {
-        initOpen(elements[i]);
+    const classNameOpen = 'open';
+
+    function setOpen(element) {
+        var target = document.getElementById(element.getAttribute('data-open'));
+        var lists = target.getElementsByTagName('ul');
+        target.classList.add(classNameOpen);
+        for (var i=0; i<lists.length; i++) {
+            var ul = lists[i];
+            ul.style.display = 'block';
+        }
     }
 
-    function initOpen(element) {
-        var className = 'open';
+    function setClosed(element) {
         var target = document.getElementById(element.getAttribute('data-open'));
-        var ulChildrenMap = function(fn) {
-            var lists = target.getElementsByTagName('ul');
-            for (var i=0; i<lists.length; i++) {
-                fn(lists[i]);
-            }
-        };
-        if (!target) return;
-
-        // dirty hack for small screen ...
-        var firstChildUl = target.getElementsByTagName('ul')[0];
-        if (firstChildUl && window.getComputedStyle(firstChildUl).display === 'none') {
-            target.classList.remove(className);
+        var lists = target.getElementsByTagName('ul');
+        target.classList.remove(classNameOpen);
+        for (var i=0; i<lists.length; i++) {
+            var ul = lists[i]
+            ul.style.display = 'none';
         }
+    }
 
-        element.addEventListener('click', function() {
-            var list = target.getElementsByTagName('ul')[0];
-            if (target.classList.contains(className)) {
-                target.classList.remove(className);
-                ulChildrenMap(function(ul) { ul.style.display = 'none'; });
-            } else {
-                target.classList.add(className);
-                ulChildrenMap(function(ul) { ul.style.display = 'block'; });
-            }
-        });
+    function init(element) {
+        var target = document.getElementById(element.getAttribute('data-open'));
+        if (target.classList.contains(classNameOpen)) {
+            setOpen(element);
+        } else {
+            setClosed(element);
+        }
+    }
+
+    function toggle(event) {
+        var element = event.currentTarget;
+        var target = document.getElementById(element.getAttribute('data-open'));
+        if (target.classList.contains(classNameOpen)) {
+            setClosed(element);
+        } else {
+            setOpen(element);
+        }
+    }
+
+    var clickableElements = document.querySelectorAll('[data-open]');
+
+    for (var i=0; i<clickableElements.length; i++) {
+        var element = clickableElements[i];
+        init(element);
+        element.addEventListener('click', toggle);
     }
 })();

@@ -97,11 +97,7 @@ a {
         &.menu-top-level {
           padding-left: 15px;
         }
-        &:before {
-          @extend .glyphicon;
-          @extend .glyphicon-file;
-          margin-right: 8px;
-        }
+        
 
         &:hover {
           background-color: $menu-hover-bg-color;
@@ -110,15 +106,28 @@ a {
         a, a:hover {
           color: $text-color;
           text-decoration: none;
+          &:before {
+            @extend .glyphicon;
+            @extend .glyphicon-file;
+            margin-right: 8px;
+          }
         }
       }
 
-      &.tags li:before {
-        @extend .glyphicon-tag;
+      &.tags {
+        li {
+          a:before {
+            @extend .glyphicon-tag;
+          }
+        }
       }
 
-      &.categories li:before {
-        @extend .glyphicon-book;
+      &.categories {
+        li {
+          a:before {
+            @extend .glyphicon-book;
+          }
+        }
       }
     }
 
@@ -133,7 +142,7 @@ a {
   }
 }
 
-ul.tags {
+ul.post-tags {
   padding-left: 0px;
   padding-right: 5px;
   margin: 0px;
