@@ -2160,9 +2160,6 @@ a {
       height: 100%;
       overflow-y: auto;
       overflow-x: hidden; } }
-  @media (max-width: 991px) {
-    .menu nav ul {
-      display: none; } }
   .menu nav h3 {
     cursor: pointer;
     font-size: 14px;

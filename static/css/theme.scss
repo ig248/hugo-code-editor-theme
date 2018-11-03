@@ -55,11 +55,11 @@ a {
       overflow-x: hidden;
     }
 
-    @media (max-width: $screen-sm-max) {
-      ul {
-        display: none;
-      }
-    }
+    // @media (max-width: $screen-sm-max) {
+    //   ul {
+    //     display: none;
+    //   }
+    // }
 
     h3 {
       @extend .no-user-select;
