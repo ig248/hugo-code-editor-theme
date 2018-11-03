@@ -106,6 +106,7 @@ a {
         a, a:hover {
           color: $text-color;
           text-decoration: none;
+          display: block;
           &:before {
             @extend .glyphicon;
             @extend .glyphicon-file;

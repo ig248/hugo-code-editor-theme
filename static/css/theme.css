@@ -2185,7 +2185,8 @@ a {
         background-color: #003b4a; }
       .menu nav ul li a, .menu nav ul li a:hover {
         color: #839496;
-        text-decoration: none; }
+        text-decoration: none;
+        display: block; }
         .menu nav ul li a:before, .menu nav ul li a:hover:before {
           margin-right: 8px; }
   @media (max-width: 991px) {
