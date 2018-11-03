@@ -2163,6 +2163,7 @@ a {
       overflow-x: hidden; } }
   .menu nav h3 {
     cursor: pointer;
+    font-size: 16px;
     padding: 4px 0px 4px 15px;
     margin: 0px; }
     .menu nav h3.home-link {
