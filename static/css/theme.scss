@@ -133,6 +133,23 @@ a {
   }
 }
 
+ul.tags {
+  padding-left: 0px;
+  padding-right: 5px;
+  margin: 0px;
+  li {
+    list-style: none;
+    float: left;
+    padding: 4px 10px 4px 0px;
+    margin-right: 0px;
+    &:before {
+      @extend .glyphicon;
+      @extend .glyphicon-tag;
+      margin-right: 8px;
+    }
+  }
+}
+
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
