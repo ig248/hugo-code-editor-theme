@@ -58,7 +58,6 @@ for (var i=0; i<clickableElements.length; i++) {
 }
 // add resize listener to auto-open/close on window resize
 window.addEventListener('resize', function(event){
-    console.log("Triggering resize event");
     for (var i=0; i<clickableElements.length; i++) {
         var element = clickableElements[i];
         set_to_screen(element);
