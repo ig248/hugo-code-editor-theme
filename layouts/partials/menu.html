@@ -20,14 +20,14 @@
         {{ end }}
     {{ end }}
   
-    <div id="last-posts" class="open">
+    <!-- <div id="last-posts" class="open">
         <h3 data-open="last-posts">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).mostrecentposts }}</h3>
         <ul>
             {{ range first 5 .Site.RegularPages }}
             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}
         </ul>
-    </div>
+    </div> -->
 
     {{ with .Site.Taxonomies.tags }}
     <div id="tags" class="open">
