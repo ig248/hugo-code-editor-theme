@@ -2,4 +2,20 @@
 {{ with .Content }}
     {{.}}
 {{ end }}
+
+<h2>Recent posts: </h2>
+<hr>
+<div class="articles-list">
+    {{ range first 5 .Pages.ByDate.Reverse }}
+    <article>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}</h3>
+        {{ if isset .Params "subtitle" }}
+            <h4>{{ .Params.subtitle }}</h4>
+        {{ end }}
+        {{ .Summary }}
+    </article>
+    <hr>
+    {{ end }}
+</div>
+
 {{ partial "bottom.html" . }}
