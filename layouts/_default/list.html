@@ -1,9 +1,8 @@
 {{ partial "top.html" . }}
-{{ $paginator := .Paginate .Data.Pages.ByPublishDate }}
 <div class="articles-list">
-    {{ range $paginator.Pages.Reverse }}
+    {{ range .Pages.ByDate.Reverse }}
     <article>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ dateFormat "2006-01-02 15:04:05" .Date }}</h3>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}</h3>
         {{ if isset .Params "subtitle" }}
             <h4>{{ .Params.subtitle }}</h4>
         {{ end }}

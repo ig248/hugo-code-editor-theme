@@ -1,13 +1,14 @@
 {{ partial "top.html" . }}
-<h1>{{ .Title }}</h1>
+{{ if not .Date.IsZero }}
+    <h1>{{ .Title }} - {{ .Date.Format "2006-01-02" }}</h1>
+{{ else }}
+    <h1>{{ .Title }} </h1>
+{{ end }}
 
 {{ if isset .Params "subtitle" }}
     <h2>{{ .Params.subtitle }}</h2>
 {{ end }}
 
-{{ if not .Date.IsZero }}
-<h4 class="date">{{ dateFormat "01-02-2006 15:04:05" .Date }}</h4>
-{{ end }}
 <ul class="post-tags">
 {{ range .Params.tags }}
     <li><a href="/tags/{{ . | urlize }}">{{ . }}</a> </li>
