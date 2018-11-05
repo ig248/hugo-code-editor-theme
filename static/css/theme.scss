@@ -190,8 +190,11 @@ ul.post-tags {
   }
 }
 
-.fb-share-button iframe {
-  margin-top: -5px;
+.fb-share-button {
+  line-height: 20px;
+  iframe {
+    margin-top: -5px;
+  }
 }
 
 div.plotly {
