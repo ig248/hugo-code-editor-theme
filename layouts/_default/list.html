@@ -2,7 +2,7 @@
 <h2> Posts </h2>
 <hr>
 <div class="articles-list">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ range (.Paginate (.Pages.ByDate.Reverse)).Pages -}}
     <article>
         <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}</h3>
         {{ if isset .Params "subtitle" }}
