@@ -1,6 +1,8 @@
 const classNameOpen = 'open';
 const screen_sm_max = 991;
 
+var clickableElements = document.querySelectorAll('[data-open]');
+
 // from https://github.com/ryanve/verge
 function viewportW() {
     var win = typeof window != 'undefined' && window;
@@ -30,9 +32,8 @@ function setClosed(element) {
     }
 }
 
-function init(element) {
-    var target = document.getElementById(element.getAttribute('data-open'));
-    if (target.classList.contains(classNameOpen) && (viewportW() > screen_sm_max)) {
+function set_to_screen(element) {
+    if (viewportW() > screen_sm_max) {
         setOpen(element);
     } else {
         setClosed(element);
@@ -49,12 +50,19 @@ function toggle(event) {
     }
 }
 
-var clickableElements = document.querySelectorAll('[data-open]');
-
+// add click listeneres
 for (var i=0; i<clickableElements.length; i++) {
     var element = clickableElements[i];
-    init(element);
+    set_to_screen(element);
     element.addEventListener('click', toggle);
 }
+// add resize listener to auto-open/close on window resize
+window.addEventListener('resize', function(event){
+    console.log("Triggering resize event");
+    for (var i=0; i<clickableElements.length; i++) {
+        var element = clickableElements[i];
+        set_to_screen(element);
+    }
+});
 
 console.log('Initialized menu')
