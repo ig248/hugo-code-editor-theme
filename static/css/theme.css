@@ -328,7 +328,7 @@ th {
 .glyphicon-home:before {
   content: "\e021"; }
 
-.glyphicon-file:before, .menu nav ul li a:before, .menu nav ul li a:hover:before {
+.glyphicon-file:before, .menu nav ul li a:before, .menu nav ul li a:hover:before, .menu nav ul li.menu-home a:before, .menu nav ul li.menu-home a:hover:before {
   content: "\e022"; }
 
 .glyphicon-time:before {
@@ -2194,6 +2194,8 @@ article {
         display: block; }
         .menu nav ul li a:before, .menu nav ul li a:hover:before {
           margin-right: 8px; }
+      .menu nav ul li.menu-home {
+        padding-left: 15px; }
   @media (max-width: 991px) {
     .menu nav h3 {
       padding: 10px 0px 10px 15px; }

@@ -1,4 +1,9 @@
 <nav class="col-md-3">
+    <ul>
+        <li class="menu-home">
+            <a title="Home" href="{{ .Site.BaseURL }}">~</a>
+        </li>
+    </ul>
     {{ range .Site.Menus.main.ByWeight }}
         {{ if .HasChildren }}
             <div id="menu-items-{{.Name}}" class="open">
