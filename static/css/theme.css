@@ -2142,6 +2142,10 @@ a {
     color: #2aa198;
     text-decoration: underline; }
 
+article {
+  text-align: justify;
+  text-justify: inter-word; }
+
 .content {
   background-color: #002b36;
   min-height: 100%;
@@ -2225,3 +2229,8 @@ ul.post-tags {
 
 div.plotly {
   display: block; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(131, 148, 150, 0.5), rgba(131, 148, 150, 0)); }
