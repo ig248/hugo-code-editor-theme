@@ -4,8 +4,12 @@
     {{ range $paginator.Pages.Reverse }}
     <article>
         <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ dateFormat "2006-01-02 15:04:05" .Date }}</h3>
+        {{ if isset .Params "subtitle" }}
+            <h4>{{ .Params.subtitle }}</h4>
+        {{ end }}
         {{ .Summary }}
     </article>
+    <hr>
     {{ end }}
 </div>
 {{ template "_internal/pagination.html" . }}
