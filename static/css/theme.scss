@@ -33,6 +33,11 @@ a {
   }
 }
 
+article {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .content {
   background-color: $content-bg-color;
   min-height: 100%;
