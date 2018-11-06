@@ -1,6 +1,6 @@
 {{ partial "top.html" . }}
 {{ if not .Date.IsZero }}
-    <h1>{{ .Title }} - {{ .Date.Format "2006-01-02" }}</h1>
+    <h1>{{ .Title }} - <nobr>{{ .Date.Format "2006-01-02" }}</nobr></h1>
 {{ else }}
     <h1>{{ .Title }} </h1>
 {{ end }}
