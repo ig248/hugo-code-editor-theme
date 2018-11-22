@@ -206,3 +206,16 @@ hr {
   height: 1px;
   background-image: linear-gradient(to right, rgba(131, 148, 150, 0.5), rgba(131, 148, 150, 0));
 }
+
+blockquote {
+  position: relative;
+  font-family: 'Roboto Mono';
+  font-size: 1.5em;
+  &:before {
+      position: relative;
+      content: '> ';
+  }
+  p {
+    display: inline;
+  }
+}
