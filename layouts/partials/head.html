@@ -1,12 +1,13 @@
 <base href="/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
+<meta name="author" content="{{ .Site.Author.name }}">
 {{ if isset . "Description" }}
 <meta name="description" content="{{ .Description }}">
 {{ else }}
 <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
 {{ end }}
+<meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />
 <title>{{ .Title }}</title>
 {{ .Hugo.Generator }}
 {{ partial "highlightjs.html" }}
