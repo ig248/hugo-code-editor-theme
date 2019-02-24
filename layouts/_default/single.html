@@ -20,6 +20,9 @@
     {{ .Content }}
 </article>
 
+{{ if ( (not (isset .Params "disqus")) or .Params.disqus) }}
 {{ template "_internal/disqus.html" . }}
+{{ end }}
+
 
 {{ partial "bottom.html" . }}
