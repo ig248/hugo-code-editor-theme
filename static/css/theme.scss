@@ -219,3 +219,28 @@ blockquote {
     display: inline;
   }
 }
+
+table {
+  margin-left:auto; 
+  margin-right:auto;
+  text-align: right;
+  thead {
+    text-align: right;
+    background-color: black
+  }
+  td, th {
+      text-align: left;
+      padding: 5px;
+  }
+  td + td, th + th {
+      text-align:right;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.5)
+    }
+    &:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.3)
+    }
+  }
+}
